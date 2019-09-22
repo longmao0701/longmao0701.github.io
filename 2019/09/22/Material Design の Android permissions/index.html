@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>RFC&#39;s Studio</title>
+    <title>Material Design の Android permissions · RFC&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >龙猫 Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Material Design の Android permissions</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>龙猫 Studio.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            龙猫 Studio.
-            <!-- 文章页  -->
+            Material Design の Android permissions
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                龙猫的博客
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MD">MD</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">672</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/09/22</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,450 +399,117 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/22/Material Design の Android permissions/" >
-            
-                <span>Material Design の Android permissions</span>
-        </a>
-        <div class="abstract-content">
-            Material Design の Android permissions
-原文链接权限申请应该是简单通俗易懂的。
-使用Android 的权限申请是受限制的。如果你的应用选择了「normal」权限，不需要用户允许即可使用。如果使用了「normal」之外的权限，一定要得到用户的许可，下面会描述相关的权限分类。
-权限组别权限被分为了九组。。。（这些和技术有关，不翻译了😔）
-意图演示一个用户可能会有如下操作：
-
-拍一张照片
-选择通讯录
-开始打电话或者发送信息
-
-这些情况下，用户的意图是明确的，对应的权限也是明确的，这时候是不需要弹窗的。
-骨架
-
-权限组别的图标
-应用的名字
-「永不询问」的选择...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MD">MD</a>
-    
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Material Design の Android permissions</p>
+<p><a href="https://material.io/design/platform-guidance/android-permissions.html#" target="_blank" rel="noopener">原文链接</a><br>权限申请应该是简单通俗易懂的。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Android 的权限申请是受限制的。如果你的应用选择了「normal」权限，不需要用户允许即可使用。<br>如果使用了「normal」之外的权限，一定要得到用户的许可，下面会描述相关的权限分类。</p>
+<h3 id="权限组别"><a href="#权限组别" class="headerlink" title="权限组别"></a>权限组别</h3><p>权限被分为了九组。。。（这些和技术有关，不翻译了😔）</p>
+<h3 id="意图演示"><a href="#意图演示" class="headerlink" title="意图演示"></a>意图演示</h3><p>一个用户可能会有如下操作：</p>
+<ul>
+<li>拍一张照片</li>
+<li>选择通讯录</li>
+<li>开始打电话或者发送信息</li>
+</ul>
+<p>这些情况下，用户的意图是明确的，对应的权限也是明确的，这时候是不需要弹窗的。</p>
+<h2 id="骨架"><a href="#骨架" class="headerlink" title="骨架"></a>骨架</h2><p><img src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690743481423.png" alt></p>
+<ol>
+<li>权限组别的图标</li>
+<li>应用的名字</li>
+<li>「永不询问」的选择框</li>
+<li>多弹窗的指示器</li>
+<li>动作</li>
+</ol>
+<h2 id="请求类型"><a href="#请求类型" class="headerlink" title="请求类型"></a>请求类型</h2><p>权限的展示策略取决于权限本身的分类和重要程度。每种策略带来的动作行为是不同的。<br><strong>决定性</strong>的权限应该最先申请<br><strong>次级权限</strong>可是根据上下文申请<br>权限的申请至少表明权限的种类和是否需要。<br><img src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690747297587.png" alt></p>
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690747427504.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/22/Material Design の Android icons/" >
-            
-                <span>Material Design の Android icons</span>
-        </a>
-        <div class="abstract-content">
-            Material Design の Android icons
-原文链接
-使用下面的设计原则是关于 Android 图标的视觉体验，动画和行为。
-载入图标载入图标是提供给 google play 的图片资源，需要注意一下要求：
-
-PNG格式或者矢量图格式
-背景层和前景层不能有遮罩或者背景阴影
-每个图层需要超过整体区域的50%
-
-OEM的要求如下：
-
-展现在OEM平台的一个单独的图形
-一个外层阴影(可选)
-
-骨架图所有的图标应该按照这个骨架图来保证视觉样式的统一性。
-
-  
-
-**正方形**
-宽：44dp
-高：44dp
-圆角：4dp
-
-  
-
-**圆形**
-直径：52dp
-
-  
-
-**竖...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MD">MD</a>
-    
+### 提前引导
+如果应用有有用户引导，应该用来展示权限申请的原因。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690748496928.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/22/简单工作流/" >
-            
-                <span>简单工作流</span>
-        </a>
-        <div class="abstract-content">
-            简单工作流
-了解需求
-了解需求背景：
-为什么做？解决的问题是什么？
-目标用户是什么样的？
-目标是什么？如何衡量是否达到了目标？（主观指标或客观数据指标）
-
-
-确认项目时间安排，给出设计工作时间预估。
-
-设计方案
-调研：了解用户、数据、竞品等；
-设计过程：
-广泛且低成本地探索不同设计方向；
-快速制作原型，与 PM 讨论方案的有效性；
-与开发工程师讨论方案，同时评估方案在技术上的可行性；
-参加设计及产品 critique，获得设计反馈或帮助；
-
-
-
-设计交付
-方案确定后，创建任务，输出设计文档；
-邀请涉及项目的所有人员 Kickoff，同步整体方案，确定各部分具体时间安排；
-进入开发前，与工...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "design">design</a>
-    
+进入app应该申请关键性的权限。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690749991883.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/22/产品设计原则 Principles/" >
-            
-                <span>产品设计原则</span>
-        </a>
-        <div class="abstract-content">
-            产品设计原则 Principles任何阶段都牢记目标并且服务目标一切以目标为优先，定义目标和目标是否达到的衡量方式。所有的手段都应该服务目标。提升效率提供愉悦感用设计的手段提升用户的操作愉悦感 ── 快速，及时响应。明亮通透且清晰形式服务功能，设计服务内容，保障界面清晰便于阅读。系统的设计，统一的设计自成系统：统一的元素，统一的组件，统一的命名，统一的文案风格，等等。忠于平台又独特存在跟系统推荐的表现一致，获得易用性红利，同时有独特的表现，传递独特价值 ── 在可控的有效范围内做得比系统更好。站在用户的角度思考站在用户的角度，理解用户的需求，给用户带来有效价值，是我们的义务和不可推卸的责...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "design">design</a>
-    
+上下文中询问申请次要的权限。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690750647222.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/17/哪些好的交互设计/" >
-            
-                <span>一些好的交互设计</span>
-        </a>
-        <div class="abstract-content">
-            一些好的交互设计整理
-微信微信的「赞」、「评论」功能是收在一个信息icon里面的。
-
-  
-
-
-很多人认为这是影响用户体验的，因为增长了交互链路。其实恰恰相反，朋友圈的主要场景是看而不是点赞，把赞放在外面才是弱化；视觉效果更佳整洁；增长路径，适当增大了评论的复杂程度，增加点赞行为的真实度，提高社交质量。
-知乎用户在听音频的时候截图，会触发反馈弹窗引导。
-
-  
-
-
-当用户点击截图的时候，会自动弹窗提示「遇到问题了么」。用户在这个场景下截图大可能的是遇到了问题，很好被引导到官方反馈途径。最重要的时候，应用运行时的弹窗可以取到一些错误信息，便于开发者进行排查。
-网易云音乐在有网与无网状态下打...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "交互">交互</a>
-    
+在一些关键场景中进行引导，既可以预估用户的兴趣，又可以提高用户对于权限的认知。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690751592237.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/17/列表/" >
-            
-                <span>「Material Design」の列表设计</span>
-        </a>
-        <div class="abstract-content">
-            列表
-原文链接列表时连续的竖直的图文排列。
-
-
-
-平台
-状态
-
-
-
-iOS
-完成
-
-
-Android
-计划中
-
-
-Flutter
-完成
-
-
-Web
-完成
-
-
-使用列表是一个连续的图文混排组合。由基本的信息和辅助动作组成。
-设计原则12
-  
-
-
-逻辑列表应该按照固定的时间，用户偏好等逻辑进行排列，以便于用户能够直观的浏览。
-
-  
-
-`行为`列表应该使特定的信息易于辨认，同时可以清晰的表现出来。
-
-骨架列表应该是最易于浏览全貌的展现形式。包含列表整体和组成整体的细分条目。
-
-列表
-行
-单行组成内容
-
-内容类型具体的内容的展现，依据场景需求，有不同的表现形式。
-
-列表的条目有3种类型：
-
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MD">MD</a>
-    
+再提供给用户便利性的帮助时进行申请会更合乎情理。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690752514281.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/17/相关英文术语/" >
-            
-                <span>工作常用的英语缩写</span>
-        </a>
-        <div class="abstract-content">
-            术语表达
-UVunique visitor 独立访问数PVpage view 页面浏览量CTRclick through rate 点击量/展现量ABTestAB 测试
+只申请恰当的权限。
+## 运行时的权限
+app 合一在安装之后的任何时间点进行权限申请。当用户需要进行某项动作的时候，比如用设备的相机，应用可以此时申请权限。
+安装之后用户可以通过手机的系统设置入口允许或者拒绝权限。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690755374470.png">
+</div>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "design">design</a>
-    
+<h2 id="被拒绝的权限"><a href="#被拒绝的权限" class="headerlink" title="被拒绝的权限"></a>被拒绝的权限</h2><p>当权限被拒绝需要提供反馈。权限的拒绝可能导致某些功能不可用，这时需要告知用户。<br>权限被拒绝可能有两种原因：</p>
+<ul>
+<li>权限本身被用户拒绝</li>
+<li>由于选中「不在询问」，被默认拒绝</li>
+</ul>
+<p>为了保证功能的正常使用，app 应该包名权限使用的必要性并提供出入口。</p>
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690757962108.png">
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/09/设计研究/" >
-            
-                <span>设计研究</span>
-        </a>
-        <div class="abstract-content">
-            设计研究
-ReferenceUX Research: Practical Techniques for Designing Better ProductsBook by Brad Nunnally and David FarkasAsking the right questions during user research, interviews and testinghttps://uxdesign.cc/asking-the-right-questions-on-user-research-interviews-and-testing-427261742a67
-A Designer’...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "design">design</a>
-    
+底部的提示告知用户。
+### 关键性的权限
+如果缺少权限会导致应用完全不能使用，需要表述清楚权限的必要性，并且提供一个按钮来打开这个权限。
+<div align="center" width="100%">
+  <img width="50%" src="https://sawtear-1300163775.cos.ap-beijing.myqcloud.com/2019/09/22/15690759174966.png">
 </div>
-            
-        </div>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://longmao0701.github.io">longmao</a>
+            <p>原文链接：<a href="https://longmao0701.github.io/2019/09/22/Material Design の Android permissions/">https://longmao0701.github.io/2019/09/22/Material Design の Android permissions/</a>
+            <p>发表日期：<a href="https://longmao0701.github.io/2019/09/22/Material Design の Android permissions/">September 22nd 2019, 1:41:53 pm</a>
+            <p>更新日期：<a href="https://longmao0701.github.io/2019/09/22/Material Design の Android permissions/">September 22nd 2019, 10:24:21 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
-    <div class="profile-name">龙猫</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="mailto:longmao0701@163.com" class="iconfont-archer email" title=email ></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/22/Material Design の Android icons/" title= "Material Design の Android icons">
+                    <div class="prevTitle">Material Design の Android icons</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/rfc_qr.png" />
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -873,6 +588,24 @@ A Designer’...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">1.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#权限组别"><span class="toc-number">1.1.</span> <span class="toc-text">权限组别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#意图演示"><span class="toc-number">1.2.</span> <span class="toc-text">意图演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#骨架"><span class="toc-number">2.</span> <span class="toc-text">骨架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请求类型"><span class="toc-number">3.</span> <span class="toc-text">请求类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#被拒绝的权限"><span class="toc-number">4.</span> <span class="toc-text">被拒绝的权限</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1088,6 +821,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
